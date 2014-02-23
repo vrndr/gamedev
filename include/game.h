@@ -18,6 +18,8 @@ public:
   // Disposes game and all libraries.
   // TODO(suhas): We may not need this as it can also be done in destructor.
   virtual void dispose() = 0;
+
+  virtual ~Game() {};
 };
 
 #endif /* defined(__include__game__) */

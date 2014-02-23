@@ -1,7 +1,9 @@
 #ifndef __include__spelling_bum__
 #define __include__spelling_bum__
 
+#include "actor.h"
 #include "game.h"
+#include "lib_wrapper.h"
 
 class SpellingBum : public Game {
 public:
@@ -20,6 +22,10 @@ public:
   // Disposes game and all libraries.
   // TODO(suhas): We may not need this as it can also be done in destructor.
   void dispose();
+
+private:
+  LibWrapper *libWrapper;
+  Actor *bum;
 };
 
 #endif /* defined(__include__spelling_bum__) */

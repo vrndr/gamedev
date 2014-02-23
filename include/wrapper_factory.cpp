@@ -1,12 +1,16 @@
 
 #include "wrapper_factory.h"
-#include "SDL_wrapper.h"
+#include "sdl_wrapper.h"
+
+LibWrapper* WrapperFactory::sdlWrapper = NULL;
 
 LibWrapper* WrapperFactory::getLibWrapper() {
   switch (USE_LIB) {
     case SDL:
-      return new SdlWrapper();
-      break;
+      if (!sdlWrapper) {
+        sdlWrapper =  new SdlWrapper();
+      }
+      return sdlWrapper;
       
     default:
       break;

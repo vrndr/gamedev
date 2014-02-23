@@ -2,13 +2,17 @@
 #ifndef __include__wrapper_factory__
 #define __include__wrapper_factory__
 
+#include <iostream>
+
 #include "lib_wrapper.h"
 
 class WrapperFactory {
 public:
-  LibWrapper* getLibWrapper();
+  static LibWrapper* getLibWrapper();
 
 private:
+  static LibWrapper* sdlWrapper;
+
   enum GameLib {
     SDL
   };

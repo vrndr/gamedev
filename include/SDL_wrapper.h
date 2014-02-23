@@ -5,6 +5,7 @@
 
 class SdlWrapper : public LibWrapper {
 public:
+  bool init();
   void render();
 };
 
