@@ -2,6 +2,7 @@
 #ifndef __include__point__
 #define __include__point__
 
+// TODO(suhas): Maybe delete this one. Rectangle suffices our needs.
 class Point {
 
 public:

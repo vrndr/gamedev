@@ -28,6 +28,7 @@ bool SpellingBum::init() {
 void SpellingBum::start() {
 
   bum->setPosition(GameConfig::bumStartingPosition);
+  stage.addActor(*bum);
 
   initializeEnvironment();
 
@@ -71,7 +72,6 @@ void SpellingBum::resume() {
 }
 
 void SpellingBum::dispose() {
-  delete libWrapper;
   delete bum;
   delete obstacleHandler;
   delete collectibleHandler;

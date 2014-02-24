@@ -1,6 +1,11 @@
 
 #include "actor.h"
 
+Actor::Actor() {
+  isStatic = false;
+  isPassive = false;
+}
+
 float Actor::getX() {
   return x;
 }
@@ -33,7 +38,27 @@ void Actor::setWidth(float w) {
   this->w = w;
 }
 
-void Actor::setPosition(Point p) {
+Rectangle Actor::getPosition() {
+  return Rectangle(x, y, w, h);
+}
+
+void Actor::setPosition(Rectangle p) {
   setX(p.getX());
   setY(p.getY());
+}
+
+bool Actor::isStaticActor() {
+  return isStatic;
+}
+
+bool Actor::isPassiveActor() {
+  return isPassive;
+}
+
+void Actor::setAsStaticActor() {
+  isStatic = true;
+}
+
+void Actor::setAsPassiveActor() {
+  isPassive = true;
 }

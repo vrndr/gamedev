@@ -24,6 +24,7 @@
 		ADD6A49A18BAC8E8008438C4 /* collectible.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A49818BAC8E8008438C4 /* collectible.cpp */; };
 		ADD6A49F18BACE39008438C4 /* collision_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A49D18BACE39008438C4 /* collision_handler.cpp */; };
 		ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A218BAD8EF008438C4 /* stage.cpp */; };
+		ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,8 @@
 		ADD6A4A018BACE51008438C4 /* collision_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collision_handler.h; sourceTree = "<group>"; };
 		ADD6A4A118BAD8E3008438C4 /* stage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stage.h; sourceTree = "<group>"; };
 		ADD6A4A218BAD8EF008438C4 /* stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stage.cpp; sourceTree = "<group>"; };
+		ADD6A4A518BAE3B6008438C4 /* rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rectangle.h; sourceTree = "<group>"; };
+		ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rectangle.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,7 @@
 				ADD6A49818BAC8E8008438C4 /* collectible.cpp */,
 				ADD6A49D18BACE39008438C4 /* collision_handler.cpp */,
 				ADD6A4A218BAD8EF008438C4 /* stage.cpp */,
+				ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -160,6 +164,7 @@
 				ADD6A47818BAB30D008438C4 /* game_config.h */,
 				ADD6A47D18BAB631008438C4 /* point.h */,
 				ADD6A4A118BAD8E3008438C4 /* stage.h */,
+				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
 			);
 			name = include;
 			path = ../include;
@@ -222,6 +227,7 @@
 				ADB9EB0618BA9870008465B5 /* sdl_wrapper.cpp in Sources */,
 				ADD6A49A18BAC8E8008438C4 /* collectible.cpp in Sources */,
 				ADD6A49F18BACE39008438C4 /* collision_handler.cpp in Sources */,
+				ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */,
 				ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */,
 				ADD6A48E18BAC7A9008438C4 /* collectible_handler.cpp in Sources */,
 				ADD6A48418BAC569008438C4 /* point.cpp in Sources */,
