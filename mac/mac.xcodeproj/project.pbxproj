@@ -12,10 +12,10 @@
 		ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0018BA9870008465B5 /* camera.cpp */; };
 		ADB9EB0618BA9870008465B5 /* sdl_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0218BA9870008465B5 /* sdl_wrapper.cpp */; };
 		ADB9EB0F18BA99B1008465B5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0D18BA99B1008465B5 /* main.cpp */; };
-		ADB9EB1218BA9DE5008465B5 /* spelling_bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB1018BA9DE5008465B5 /* spelling_bum.cpp */; };
-		ADB9EB1518BAA5BC008465B5 /* wrapper_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB1318BAA5BC008465B5 /* wrapper_factory.cpp */; };
 		ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A47918BAB4E1008438C4 /* actor.cpp */; };
 		ADD6A47E18BAB631008438C4 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A47C18BAB631008438C4 /* point.cpp */; };
+		ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */; };
+		ADD6A48218BAC4DC008438C4 /* wrapper_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,15 +43,15 @@
 		ADB9EB0B18BA9975008465B5 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		ADB9EB0C18BA9975008465B5 /* sdl_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdl_wrapper.h; sourceTree = "<group>"; };
 		ADB9EB0D18BA99B1008465B5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		ADB9EB1018BA9DE5008465B5 /* spelling_bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = spelling_bum.cpp; path = ../include/spelling_bum.cpp; sourceTree = "<group>"; };
 		ADB9EB1118BA9DE5008465B5 /* spelling_bum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spelling_bum.h; sourceTree = "<group>"; };
-		ADB9EB1318BAA5BC008465B5 /* wrapper_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wrapper_factory.cpp; path = ../include/wrapper_factory.cpp; sourceTree = "<group>"; };
 		ADB9EB1418BAA5BC008465B5 /* wrapper_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrapper_factory.h; sourceTree = "<group>"; };
 		ADB9EB1718BAA67A008465B5 /* lib_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib_wrapper.h; sourceTree = "<group>"; };
 		ADD6A47818BAB30D008438C4 /* game_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_config.h; sourceTree = "<group>"; };
 		ADD6A47918BAB4E1008438C4 /* actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = actor.cpp; sourceTree = "<group>"; };
 		ADD6A47C18BAB631008438C4 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = point.cpp; path = ../include/point.cpp; sourceTree = "<group>"; };
 		ADD6A47D18BAB631008438C4 /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
+		ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = spelling_bum.cpp; sourceTree = "<group>"; };
+		ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrapper_factory.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +94,9 @@
 		ADB9EAFE18BA9870008465B5 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */,
+				ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */,
 				ADD6A47C18BAB631008438C4 /* point.cpp */,
-				ADB9EB1318BAA5BC008465B5 /* wrapper_factory.cpp */,
-				ADB9EB1018BA9DE5008465B5 /* spelling_bum.cpp */,
 				ADB9EAFF18BA9870008465B5 /* bum.cpp */,
 				ADB9EB0018BA9870008465B5 /* camera.cpp */,
 				ADB9EB0218BA9870008465B5 /* sdl_wrapper.cpp */,
@@ -176,13 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB9EB1218BA9DE5008465B5 /* spelling_bum.cpp in Sources */,
 				ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */,
+				ADD6A48218BAC4DC008438C4 /* wrapper_factory.cpp in Sources */,
 				ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */,
 				ADB9EB0618BA9870008465B5 /* sdl_wrapper.cpp in Sources */,
+				ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */,
 				ADD6A47E18BAB631008438C4 /* point.cpp in Sources */,
 				ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */,
-				ADB9EB1518BAA5BC008465B5 /* wrapper_factory.cpp in Sources */,
 				ADB9EB0F18BA99B1008465B5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
