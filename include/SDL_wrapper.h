@@ -4,6 +4,7 @@
 #include "lib_wrapper.h"
 
 class SdlWrapper : public LibWrapper {
+
 public:
   bool init();
   void render();

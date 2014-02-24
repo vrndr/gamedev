@@ -1,6 +1,6 @@
 
-#ifndef mac_game_config_h
-#define mac_game_config_h
+#ifndef include_game_config_h
+#define include_game_config_h
 
 #include "point.h"
 

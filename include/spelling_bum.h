@@ -2,10 +2,16 @@
 #define __include__spelling_bum__
 
 #include "actor.h"
+#include "collectible_handler.h"
+#include "collision_handler.h"
 #include "game.h"
+#include "input_handler.h"
 #include "lib_wrapper.h"
+#include "obstacle_handler.h"
+#include "stage.h"
 
 class SpellingBum : public Game {
+
 public:
   // Initializes game and all required libraries.
   bool init();
@@ -26,6 +32,15 @@ public:
 private:
   LibWrapper *libWrapper;
   Actor *bum;
+  ObstacleHandler *obstacleHandler;
+  CollectibleHandler *collectibleHandler;
+  CollisionHandler *collisionHandler;
+  InputHandler *inputHandler;
+  Camera *camera;
+
+  Stage stage;
+
+  void initializeEnvironment();
 };
 
 #endif /* defined(__include__spelling_bum__) */

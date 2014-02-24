@@ -3,6 +3,7 @@
 #define __include__point__
 
 class Point {
+
 public:
   Point(float x, float y);
   float getX();

@@ -7,6 +7,7 @@
 #include "lib_wrapper.h"
 
 class WrapperFactory {
+
 public:
   static LibWrapper* getLibWrapper();
 

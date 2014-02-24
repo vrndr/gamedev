@@ -4,6 +4,7 @@
 #include "point.h"
 
 class Actor {
+
 public:
   virtual float getX();
   virtual float getY();
@@ -18,6 +19,7 @@ public:
   virtual void setPosition(Point p);
 
   virtual void handleCollision(Actor* collidedWith) {}
+  virtual void update(float delta) {}
 
   virtual ~Actor() {};
   

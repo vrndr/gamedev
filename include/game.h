@@ -2,6 +2,7 @@
 #define __include__game__
 
 class Game {
+
 public:
   // Initializes game and all required libraries.
   virtual bool init() = 0;
