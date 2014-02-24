@@ -21,6 +21,7 @@ public:
 
   bool init();
   void render();
+  Event* getInputEvent();
 };
 
 #endif /* defined(__include__sdl_wrapper__) */

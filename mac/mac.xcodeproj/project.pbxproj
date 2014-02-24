@@ -26,6 +26,7 @@
 		ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A218BAD8EF008438C4 /* stage.cpp */; };
 		ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */; };
 		ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD6A56B18BB0531008438C4 /* SDL2.framework */; };
+		ADD6A57018BB22E0008438C4 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A56E18BB22E0008438C4 /* event.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +153,8 @@
 		ADD6A55E18BB0323008438C4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		ADD6A55F18BB0323008438C4 /* WhatsNew.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WhatsNew.txt; sourceTree = "<group>"; };
 		ADD6A56B18BB0531008438C4 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
+		ADD6A56D18BB22D6008438C4 /* event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
+		ADD6A56E18BB22E0008438C4 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 				ADD6A49D18BACE39008438C4 /* collision_handler.cpp */,
 				ADD6A4A218BAD8EF008438C4 /* stage.cpp */,
 				ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */,
+				ADD6A56E18BB22E0008438C4 /* event.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -240,6 +244,7 @@
 				ADD6A47D18BAB631008438C4 /* point.h */,
 				ADD6A4A118BAD8E3008438C4 /* stage.h */,
 				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
+				ADD6A56D18BB22D6008438C4 /* event.h */,
 			);
 			name = include;
 			path = ../include;
@@ -408,6 +413,7 @@
 				ADD6A48718BAC5C3008438C4 /* input_handler.cpp in Sources */,
 				ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */,
 				ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */,
+				ADD6A57018BB22E0008438C4 /* event.cpp in Sources */,
 				ADB9EB0F18BA99B1008465B5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

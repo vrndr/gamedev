@@ -1,6 +1,7 @@
 #include <iostream>
-#include "sdl_wrapper.h"
+
 #include "game_config.h"
+#include "sdl_wrapper.h"
 
 using namespace std ;
 
@@ -33,4 +34,28 @@ bool SdlWrapper::init() {
 
 void SdlWrapper::render() {
 
+}
+
+Event* SdlWrapper::getInputEvent() {
+  Event *e;
+  SDL_Event sdlEvent;
+  SDL_PollEvent(&sdlEvent);
+
+  switch (sdlEvent.type) {
+
+    case SDL_QUIT:
+      e = new Event(QUIT);
+      break;
+
+    case SDL_KEYDOWN:
+      e = new Event(KEY_DOWN);
+      // Set other event data like key type
+      break;
+
+    // Handle other events like touch.
+    default:
+      e = new Event(NONE);
+  }
+
+  return e;
 }

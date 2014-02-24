@@ -25,6 +25,7 @@ bool SpellingBum::init() {
   return true;
 }
 
+// TODO(suhas): Refactor this method.
 void SpellingBum::start() {
 
   bum->setPosition(GameConfig::bumStartingPosition);
@@ -35,8 +36,10 @@ void SpellingBum::start() {
   // TODO(suhas): Not a right clock. Use something else.
   std::clock_t currentTime = std::clock();
   float delta = 0;
-  
+
   while (1) {
+    // TODO(suhas): Should have a GameState that will control this while loop
+    // and will also control pause and game over states.
 
     std::cout << "New delta " << delta << " time " << currentTime << "\n";
 
@@ -51,6 +54,9 @@ void SpellingBum::start() {
     // Actors. These are actually group of Actors.
     collectibleHandler->update(*camera);
     obstacleHandler->update(*camera);
+
+    // TODO(suhas): Should be in different thread?
+    inputHandler->handleInputEvents();
 
     collisionHandler->checkCollisions();
 
