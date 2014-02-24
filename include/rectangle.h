@@ -5,11 +5,13 @@
 class Rectangle {
 
 public:
-  Rectangle(float x, float y, float w, float h);
+  Rectangle(float x = 0, float y = 0, float w = 0, float h = 0);
   float getX();
   float getY();
   float getWidth();
   float getHeight();
+
+  void set(float x, float y, float w, float h);
 
 private:
   float x, y, w, h;

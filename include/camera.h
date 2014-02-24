@@ -11,7 +11,9 @@ public:
   void render(Stage stage);
 
 private:
+  Rectangle cameraPosition;
   LibWrapper *libWrapper;
+
   void renderActor(Actor actor);
 };
 

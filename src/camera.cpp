@@ -1,9 +1,11 @@
 
 #include "camera.h"
+#include "game_config.h"
 #include "wrapper_factory.h"
 
 void Camera::init() {
   libWrapper = WrapperFactory::getLibWrapper();
+  cameraPosition.set(0 , 0, GameConfig::screenWidth, GameConfig::screenHeight);
 }
 
 void Camera::render(Stage stage) {
