@@ -42,7 +42,6 @@ void SpellingBum::start() {
 
     // update all actors.
     std::list<Actor> allActors = stage.getAllActors();
-
     for (std::list<Actor>::iterator actor = allActors.begin();
         actor != allActors.end(); actor++) {
       actor->update(delta);
@@ -55,7 +54,7 @@ void SpellingBum::start() {
 
     collisionHandler->checkCollisions();
 
-    // Render stage with camera.
+    camera->render(stage);
 
     std::clock_t previousTime = currentTime;
     currentTime = std::clock();
@@ -64,7 +63,8 @@ void SpellingBum::start() {
 }
 
 void SpellingBum::pause() {
-  
+  // TODO(suhas): Game loop should have states and pause / resume will change
+  // these states.
 }
 
 void SpellingBum::resume() {
@@ -85,4 +85,5 @@ void SpellingBum::initializeEnvironment() {
   collectibleHandler->initializeObstacles(stage);
   collisionHandler->init();
   inputHandler->init();
+  camera->init();
 }

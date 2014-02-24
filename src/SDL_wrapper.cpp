@@ -1,12 +1,12 @@
 #include <iostream>
 #include "sdl_wrapper.h"
+#include "game_config.h"
 
 using namespace std ;
 
 bool SdlWrapper::init() {
 
   // TODO (Veerendra): return meaningful error values
-  int quit = false ;
 
   if (SDL_Init(SDL_INIT_EVERYTHING) == -1){
     cout << SDL_GetError() << endl;
@@ -14,7 +14,8 @@ bool SdlWrapper::init() {
   }
 
   window = SDL_CreateWindow("SpellingBum", SDL_WINDOWPOS_CENTERED, 
-    SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+      SDL_WINDOWPOS_CENTERED, GameConfig::screenWidth, GameConfig::screenHeight,
+      SDL_WINDOW_SHOWN);
   if (window == nullptr){
     cout << SDL_GetError() << endl;
     return false;

@@ -15,4 +15,4 @@ private:
   float x, y, w, h;
 };
 
-#endif // defined(__include__rectangle__)
+#endif /* defined(__include__rectangle__) */

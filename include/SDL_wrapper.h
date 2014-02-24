@@ -1,3 +1,4 @@
+
 #ifndef __include__sdl_wrapper__
 #define __include__sdl_wrapper__
 
@@ -7,8 +8,6 @@
 class SdlWrapper : public LibWrapper {
   SDL_Window *window;
   SDL_Renderer *renderer;
-  static const int SCREEN_WIDTH = 640 ;
-  static const int SCREEN_HEIGHT = 480 ;
 
 public:
 
