@@ -1,7 +1,9 @@
 #ifndef __include__game__
 #define __include__game__
 
-class Game {
+#include "base_entity.h"
+
+class Game : public BaseEntity {
 
 public:
   // Initializes game and all required libraries.

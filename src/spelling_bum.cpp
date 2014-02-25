@@ -8,6 +8,7 @@
 #include "obstacle.h"
 #include "spelling_bum.h"
 #include "wrapper_factory.h"
+#include "event_dispatcher.h"
 
 bool SpellingBum::init() {
 
@@ -22,8 +23,22 @@ bool SpellingBum::init() {
   collisionHandler = new CollisionHandler();
   inputHandler = new InputHandler();
   camera = new Camera();
+  EventDispatcher->registerEventHandler( this, QUIT );
+  isRunning = true ;
+
   return true;
 }
+
+void SpellingBum::handleEvent(Event* e)
+{
+  switch(e->getType())
+  {
+  case QUIT:
+    this->isRunning = false ;
+    break ;
+  }
+}
+
 
 // TODO(suhas): Refactor this method.
 void SpellingBum::start() {
@@ -37,7 +52,7 @@ void SpellingBum::start() {
   std::clock_t currentTime = std::clock();
   float delta = 0;
 
-  while (1) {
+  while (isRunning) {
     // TODO(suhas): Should have a GameState that will control this while loop
     // and will also control pause and game over states.
 

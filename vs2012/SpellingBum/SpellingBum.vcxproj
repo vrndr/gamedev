@@ -55,6 +55,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\ext\SDL2\lib-win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,6 +82,8 @@
     <ClCompile Include="..\..\src\collectible.cpp" />
     <ClCompile Include="..\..\src\collectible_handler.cpp" />
     <ClCompile Include="..\..\src\collision_handler.cpp" />
+    <ClCompile Include="..\..\src\event.cpp" />
+    <ClCompile Include="..\..\src\event_dispatcher.cpp" />
     <ClCompile Include="..\..\src\input_handler.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\obstacle.cpp" />
@@ -95,11 +98,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\actor.h" />
+    <ClInclude Include="..\..\include\base_entity.h" />
     <ClInclude Include="..\..\include\bum.h" />
     <ClInclude Include="..\..\include\camera.h" />
     <ClInclude Include="..\..\include\collectible.h" />
     <ClInclude Include="..\..\include\collectible_handler.h" />
     <ClInclude Include="..\..\include\collision_handler.h" />
+    <ClInclude Include="..\..\include\event_dispatcher.h" />
     <ClInclude Include="..\..\include\game.h" />
     <ClInclude Include="..\..\include\game_config.h" />
     <ClInclude Include="..\..\include\input_handler.h" />

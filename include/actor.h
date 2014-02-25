@@ -2,8 +2,9 @@
 #define __include__actor__
 
 #include "rectangle.h"
+#include "base_entity.h"
 
-class Actor {
+class Actor : public BaseEntity {
 
 public:
   Actor();

@@ -29,7 +29,11 @@ public:
   // TODO(suhas): We may not need this as it can also be done in destructor.
   void dispose();
 
+  // Handles events dispatched to this object
+  void handleEvent(Event* e);
+
 private:
+  bool isRunning ;
   LibWrapper *libWrapper;
   Actor *bum;
   ObstacleHandler *obstacleHandler;

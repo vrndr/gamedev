@@ -1,6 +1,7 @@
 
 #include "input_handler.h"
 #include "wrapper_factory.h"
+#include "event_dispatcher.h"
 
 void InputHandler::init() {
   libWrapper = WrapperFactory::getLibWrapper();
@@ -19,6 +20,7 @@ void InputHandler::handleInputEvents() {
 
     case QUIT:
       // Quit game.
+      EventDispatcher->dispatchEvent(e);
       break;
 
     // Handle all events;
