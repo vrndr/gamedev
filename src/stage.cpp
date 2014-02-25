@@ -3,14 +3,14 @@
 
 #include "stage.h"
 
-void Stage::addActor(Actor actor) {
+void Stage::addActor(const Actor &actor) {
   actors.push_back(actor);
 }
 
-void Stage::removeActor(Actor actor) {
+void Stage::removeActor(const Actor &actor) {
   
 }
 
-std::list<Actor> Stage::getAllActors() {
+std::list<Actor> Stage::getAllActors() const {
   return actors;
 }

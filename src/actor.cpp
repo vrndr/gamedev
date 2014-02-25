@@ -6,19 +6,19 @@ Actor::Actor() {
   isPassive = false;
 }
 
-float Actor::getX() {
+float Actor::getX() const {
   return x;
 }
 
-float Actor::getY() {
+float Actor::getY() const {
   return y;
 }
 
-float Actor::getHeight() {
+float Actor::getHeight() const {
   return h;
 }
 
-float Actor::getWidth() {
+float Actor::getWidth() const {
   return w;
 }
 
@@ -38,20 +38,20 @@ void Actor::setWidth(float w) {
   this->w = w;
 }
 
-Rectangle Actor::getPosition() {
+Rectangle Actor::getPosition() const {
   return Rectangle(x, y, w, h);
 }
 
-void Actor::setPosition(Rectangle p) {
-  setX(p.getX());
-  setY(p.getY());
+void Actor::setPosition(const Rectangle &position) {
+  setX(position.getX());
+  setY(position.getY());
 }
 
-bool Actor::isStaticActor() {
+bool Actor::isStaticActor() const {
   return isStatic;
 }
 
-bool Actor::isPassiveActor() {
+bool Actor::isPassiveActor() const {
   return isPassive;
 }
 

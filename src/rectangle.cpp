@@ -8,19 +8,19 @@ Rectangle::Rectangle(float x, float y, float w, float h) {
   this->h = h;
 }
 
-float Rectangle::getX() {
+float Rectangle::getX() const {
   return x;
 }
 
-float Rectangle::getY() {
+float Rectangle::getY() const {
   return y;
 }
 
-float Rectangle::getHeight() {
+float Rectangle::getHeight() const {
   return h;
 }
 
-float Rectangle::getWidth() {
+float Rectangle::getWidth() const {
   return w;
 }
 

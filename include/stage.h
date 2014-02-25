@@ -8,9 +8,9 @@
 
 class Stage {
 public:
-  void addActor(Actor actor);
-  void removeActor(Actor actor);
-  std::list<Actor> getAllActors();
+  void addActor(const Actor &actor);
+  void removeActor(const Actor &actor);
+  std::list<Actor> getAllActors() const;
 
 private:
   std::list<Actor> actors;
