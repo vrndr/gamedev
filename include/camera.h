@@ -8,13 +8,16 @@ class Camera {
 
 public:
   void init();
-  void render(Stage stage);
+  void render(const Stage &stage);
+  void update();
+  void followActor(Actor *actor);
 
 private:
   Rectangle cameraPosition;
   LibWrapper *libWrapper;
+  Actor *actorToFollow;
 
-  void renderActor(Actor actor);
+  void renderActor(const Actor &actor);
 };
 
 #endif /* defined(__include__camera__) */

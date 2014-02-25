@@ -9,27 +9,27 @@ public:
   Actor();
 
   // TODO(suhas): Maybe just use Rectangle instead of all these methods.
-  virtual float getX();
-  virtual float getY();
-  virtual float getHeight();
-  virtual float getWidth();
+  virtual float getX() const;
+  virtual float getY() const;
+  virtual float getHeight() const;
+  virtual float getWidth() const;
 
   virtual void setX(float x);
   virtual void setY(float y);
   virtual void setHeight(float h);
   virtual void setWidth(float w);
 
-  virtual Rectangle getPosition();
-  virtual void setPosition(Rectangle p);
+  virtual Rectangle getPosition() const;
+  virtual void setPosition(const Rectangle &position);
 
-  virtual void handleCollision(Actor* collidedWith) {}
+  virtual void handleCollision(Actor *collidedWith) {}
   virtual void update(float delta) {}
 
   virtual void setAsStaticActor();
   virtual void setAsPassiveActor();
 
-  virtual bool isStaticActor();
-  virtual bool isPassiveActor();
+  virtual bool isStaticActor() const;
+  virtual bool isPassiveActor() const;
 
   virtual ~Actor() {};
 

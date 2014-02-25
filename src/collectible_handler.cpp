@@ -1,10 +1,10 @@
 
 #include "collectible_handler.h"
 
-void CollectibleHandler::initializeObstacles(Stage stage) {
+void CollectibleHandler::initializeObstacles(const Stage &stage) {
   
 }
 
-void CollectibleHandler::update(Camera camera) {
+void CollectibleHandler::update(const Camera &camera) {
   
 }

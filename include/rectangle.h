@@ -6,10 +6,10 @@ class Rectangle {
 
 public:
   Rectangle(float x = 0, float y = 0, float w = 0, float h = 0);
-  float getX();
-  float getY();
-  float getWidth();
-  float getHeight();
+  float getX() const;
+  float getY() const;
+  float getWidth() const;
+  float getHeight() const;
 
   void set(float x, float y, float w, float h);
 

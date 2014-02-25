@@ -13,9 +13,9 @@
 class ObstacleHandler {
   
 public:
-  void initializeCollectibles(Stage stage);
+  void initializeCollectibles(const Stage &stage);
 
-  void update(Camera camera);
+  void update(const Camera &camera);
 };
 
 #endif /* defined(__include__obstacle_injector__) */

@@ -13,9 +13,9 @@
 class CollectibleHandler {
 
 public:
-  void initializeObstacles(Stage stage);
+  void initializeObstacles(const Stage &stage);
 
-  void update(Camera camera);
+  void update(const Camera &camera);
 };
 
 #endif /* defined(__include__collectible_injector__) */
