@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ADB9EAF818BA9854008465B5 /* mac.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADB9EAF718BA9854008465B5 /* mac.1 */; };
+		AD35C05C18BDDDEE00D87537 /* obstacle.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C05B18BDDCB000D87537 /* obstacle.png */; };
+		AD35C06118BDDF2200D87537 /* bum.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C06018BDDF1C00D87537 /* bum.png */; };
+		ADB9EAF818BA9854008465B5 /* mac.1 in Copy Files */ = {isa = PBXBuildFile; fileRef = ADB9EAF718BA9854008465B5 /* mac.1 */; };
 		ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EAFF18BA9870008465B5 /* bum.cpp */; };
 		ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0018BA9870008465B5 /* camera.cpp */; };
 		ADB9EB0618BA9870008465B5 /* sdl_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0218BA9870008465B5 /* sdl_wrapper.cpp */; };
@@ -27,22 +29,31 @@
 		ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */; };
 		ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD6A56B18BB0531008438C4 /* SDL2.framework */; };
 		ADD6A57018BB22E0008438C4 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A56E18BB22E0008438C4 /* event.cpp */; };
+		ADD6A57418BC7D36008438C4 /* event_dispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */; };
+		ADD6A57A18BD8999008438C4 /* renderable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57818BD8999008438C4 /* renderable.cpp */; };
+		ADD6A58018BD8B0B008438C4 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57E18BD8B0B008438C4 /* sprite.cpp */; };
+		ADD6A58418BD8F0D008438C4 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ADB9EAF018BA9854008465B5 /* CopyFiles */ = {
+		ADB9EAF018BA9854008465B5 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = assets;
+			dstSubfolderSpec = 7;
 			files = (
-				ADB9EAF818BA9854008465B5 /* mac.1 in CopyFiles */,
+				AD35C06118BDDF2200D87537 /* bum.png in Copy Files */,
+				AD35C05C18BDDDEE00D87537 /* obstacle.png in Copy Files */,
+				ADB9EAF818BA9854008465B5 /* mac.1 in Copy Files */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD35C05B18BDDCB000D87537 /* obstacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle.png; sourceTree = "<group>"; };
+		AD35C06018BDDF1C00D87537 /* bum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bum.png; sourceTree = "<group>"; };
 		ADB9EAF218BA9854008465B5 /* mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB9EAF718BA9854008465B5 /* mac.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mac.1; sourceTree = "<group>"; };
 		ADB9EAFF18BA9870008465B5 /* bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bum.cpp; sourceTree = "<group>"; };
@@ -155,6 +166,14 @@
 		ADD6A56B18BB0531008438C4 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		ADD6A56D18BB22D6008438C4 /* event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
 		ADD6A56E18BB22E0008438C4 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
+		ADD6A57118BC7D1E008438C4 /* base_entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_entity.h; sourceTree = "<group>"; };
+		ADD6A57218BC7D1E008438C4 /* event_dispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = event_dispatcher.h; sourceTree = "<group>"; };
+		ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = event_dispatcher.cpp; sourceTree = "<group>"; };
+		ADD6A57618BD8984008438C4 /* renderable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderable.h; sourceTree = "<group>"; };
+		ADD6A57818BD8999008438C4 /* renderable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderable.cpp; sourceTree = "<group>"; };
+		ADD6A57C18BD8A27008438C4 /* sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
+		ADD6A57E18BD8B0B008438C4 /* sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sprite.cpp; sourceTree = "<group>"; };
+		ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */,
+				ADD6A58418BD8F0D008438C4 /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +192,7 @@
 		ADB9EAE918BA9854008465B5 = {
 			isa = PBXGroup;
 			children = (
+				ADD6A58F18BDBF6D008438C4 /* assets */,
 				ADD6A4EC18BB0323008438C4 /* SDL2 */,
 				ADB9EB0718BA9975008465B5 /* include */,
 				ADB9EAFE18BA9870008465B5 /* src */,
@@ -199,6 +220,7 @@
 		ADB9EAFE18BA9870008465B5 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */,
 				ADD6A48318BAC569008438C4 /* point.cpp */,
 				ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */,
 				ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */,
@@ -217,6 +239,8 @@
 				ADD6A4A218BAD8EF008438C4 /* stage.cpp */,
 				ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */,
 				ADD6A56E18BB22E0008438C4 /* event.cpp */,
+				ADD6A57818BD8999008438C4 /* renderable.cpp */,
+				ADD6A57E18BD8B0B008438C4 /* sprite.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -225,6 +249,8 @@
 		ADB9EB0718BA9975008465B5 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				ADD6A57118BC7D1E008438C4 /* base_entity.h */,
+				ADD6A57218BC7D1E008438C4 /* event_dispatcher.h */,
 				ADD6A4A018BACE51008438C4 /* collision_handler.h */,
 				ADD6A49B18BAC905008438C4 /* collectible.h */,
 				ADD6A49C18BAC905008438C4 /* obstacle.h */,
@@ -245,6 +271,8 @@
 				ADD6A4A118BAD8E3008438C4 /* stage.h */,
 				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
 				ADD6A56D18BB22D6008438C4 /* event.h */,
+				ADD6A57618BD8984008438C4 /* renderable.h */,
+				ADD6A57C18BD8A27008438C4 /* sprite.h */,
 			);
 			name = include;
 			path = ../include;
@@ -341,9 +369,20 @@
 		ADD6A56A18BB0531008438C4 /* lib-mac */ = {
 			isa = PBXGroup;
 			children = (
+				ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */,
 				ADD6A56B18BB0531008438C4 /* SDL2.framework */,
 			);
 			path = "lib-mac";
+			sourceTree = "<group>";
+		};
+		ADD6A58F18BDBF6D008438C4 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD35C06018BDDF1C00D87537 /* bum.png */,
+				AD35C05B18BDDCB000D87537 /* obstacle.png */,
+			);
+			name = assets;
+			path = ../assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +394,7 @@
 			buildPhases = (
 				ADB9EAEE18BA9854008465B5 /* Sources */,
 				ADB9EAEF18BA9854008465B5 /* Frameworks */,
-				ADB9EAF018BA9854008465B5 /* CopyFiles */,
+				ADB9EAF018BA9854008465B5 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -404,14 +443,17 @@
 				ADD6A49A18BAC8E8008438C4 /* collectible.cpp in Sources */,
 				ADD6A49F18BACE39008438C4 /* collision_handler.cpp in Sources */,
 				ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */,
+				ADD6A57A18BD8999008438C4 /* renderable.cpp in Sources */,
 				ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */,
 				ADD6A48E18BAC7A9008438C4 /* collectible_handler.cpp in Sources */,
 				ADD6A48418BAC569008438C4 /* point.cpp in Sources */,
 				ADD6A49718BAC8D6008438C4 /* obstacle.cpp in Sources */,
 				ADD6A49118BAC7B8008438C4 /* score_board.cpp in Sources */,
 				ADD6A48B18BAC799008438C4 /* obstacle_handler.cpp in Sources */,
+				ADD6A57418BC7D36008438C4 /* event_dispatcher.cpp in Sources */,
 				ADD6A48718BAC5C3008438C4 /* input_handler.cpp in Sources */,
 				ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */,
+				ADD6A58018BD8B0B008438C4 /* sprite.cpp in Sources */,
 				ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */,
 				ADD6A57018BB22E0008438C4 /* event.cpp in Sources */,
 				ADB9EB0F18BA99B1008465B5 /* main.cpp in Sources */,

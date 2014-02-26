@@ -1,8 +1,9 @@
 #ifndef __include__actor__
 #define __include__actor__
 
-#include "rectangle.h"
 #include "base_entity.h"
+#include "rectangle.h"
+#include "renderable.h"
 
 class Actor : public BaseEntity {
 
@@ -32,7 +33,11 @@ public:
   virtual bool isStaticActor() const;
   virtual bool isPassiveActor() const;
 
+  virtual Renderable getRenderable() const;
   virtual ~Actor() {};
+
+protected:
+  Renderable *renderable;
 
 private:
   float x, y, h, w;

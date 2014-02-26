@@ -13,9 +13,15 @@
 class ObstacleHandler {
   
 public:
-  void initializeCollectibles(const Stage &stage);
+  void initializeCollectibles(Stage *stage);
 
   void update(const Camera &camera);
+
+private:
+  Stage *stage;
+
+  // Really hacky. Added only for testing.
+  float last_obstacle_position;
 };
 
 #endif /* defined(__include__obstacle_injector__) */

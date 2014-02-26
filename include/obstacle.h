@@ -6,6 +6,8 @@
 
 class Obstacle : public Actor {
   
+public:
+  Obstacle();
 };
 
 #endif /* defined(__include__obstacle__) */

@@ -11,13 +11,14 @@ public:
   void render(const Stage &stage);
   void update();
   void followActor(Actor *actor);
+  Rectangle getCameraPosition() const;
 
 private:
   Rectangle cameraPosition;
   LibWrapper *libWrapper;
   Actor *actorToFollow;
 
-  void renderActor(const Actor &actor);
+  void renderActor(Actor *actor);
 };
 
 #endif /* defined(__include__camera__) */

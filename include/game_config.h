@@ -8,7 +8,7 @@
 namespace GameConfig {
 
   // TODO(suhas): Should be externs?
-  const Rectangle bumStartingPosition(200, 200, 50, 50);
+  const Rectangle bumStartingPosition(100, 300, 96, 80);
 
   const float screenWidth = 640;
   const float screenHeight = 480;

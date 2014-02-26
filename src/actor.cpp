@@ -4,6 +4,8 @@
 Actor::Actor() {
   isStatic = false;
   isPassive = false;
+
+  renderable = new Renderable(RenderType::RENDER_NONE);
 }
 
 float Actor::getX() const {
@@ -45,6 +47,8 @@ Rectangle Actor::getPosition() const {
 void Actor::setPosition(const Rectangle &position) {
   setX(position.getX());
   setY(position.getY());
+  setWidth(position.getWidth());
+  setHeight(position.getHeight());
 }
 
 bool Actor::isStaticActor() const {
@@ -61,4 +65,8 @@ void Actor::setAsStaticActor() {
 
 void Actor::setAsPassiveActor() {
   isPassive = true;
+}
+
+Renderable Actor::getRenderable() const {
+  return *renderable;
 }

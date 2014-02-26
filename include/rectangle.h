@@ -12,6 +12,10 @@ public:
   float getHeight() const;
 
   void set(float x, float y, float w, float h);
+  virtual void setX(float x);
+  virtual void setY(float y);
+  virtual void setHeight(float h);
+  virtual void setWidth(float w);
 
 private:
   float x, y, w, h;

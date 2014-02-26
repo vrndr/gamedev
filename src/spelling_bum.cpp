@@ -43,10 +43,11 @@ void SpellingBum::handleEvent(Event* e)
 // TODO(suhas): Refactor this method.
 void SpellingBum::start() {
 
-  bum->setPosition(GameConfig::bumStartingPosition);
-  stage.addActor(*bum);
-
   initializeEnvironment();
+
+  bum->setPosition(GameConfig::bumStartingPosition);
+  stage.addActor(bum);
+  camera->followActor(bum);
 
   // TODO(suhas): Not a right clock. Use something else.
   std::clock_t currentTime = std::clock();
@@ -59,10 +60,10 @@ void SpellingBum::start() {
     std::cout << "New delta " << delta << " time " << currentTime << "\n";
 
     // update all actors.
-    std::list<Actor> allActors = stage.getAllActors();
-    for (std::list<Actor>::iterator actor = allActors.begin();
+    std::list<Actor *> allActors = stage.getAllActors();
+    for (std::list<Actor *>::iterator actor = allActors.begin();
         actor != allActors.end(); actor++) {
-      actor->update(delta);
+      (*actor)->update(delta);
     }
 
     // TODO(suhas): Should we make CollectibleHandler / ObstacleHandlers as
@@ -75,6 +76,7 @@ void SpellingBum::start() {
 
     collisionHandler->checkCollisions();
 
+    camera->update();
     camera->render(stage);
 
     std::clock_t previousTime = currentTime;
@@ -102,7 +104,7 @@ void SpellingBum::dispose() {
 }
 
 void SpellingBum::initializeEnvironment() {
-  obstacleHandler->initializeCollectibles(stage);
+  obstacleHandler->initializeCollectibles(&stage);
   collectibleHandler->initializeObstacles(stage);
   collisionHandler->init();
   inputHandler->init();

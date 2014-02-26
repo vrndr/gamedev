@@ -2,12 +2,15 @@
 #ifndef __include__sdl_wrapper__
 #define __include__sdl_wrapper__
 
+#include <vector>
+
 #include "lib_wrapper.h"
 #include "SDL.h"
 
 class SdlWrapper : public LibWrapper {
   SDL_Window *window;
   SDL_Renderer *renderer;
+  std::vector<SDL_Texture *> textures;
 
 public:
 
@@ -20,7 +23,14 @@ public:
   }
 
   bool init();
-  void render();
+  void startRendering();
+  void render(const Renderable &renderable, const Rectangle &position);
+  void finishRendering();
+
+  // Creates texture and returns textureId, that can be referrenced later to
+  // render the texture created.
+  int createTexture(const std::string &fileName);
+
   Event* getInputEvent();
 };
 
