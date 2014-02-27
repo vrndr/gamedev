@@ -30,6 +30,7 @@ public:
   class Builder {
 
   public:
+    Builder():clipId(0) {} 
     Builder setRenderType(RenderType renderType);
     Builder setTextureFile(std::string filePath);
     Builder setNumClipsInRow(int numClipsInRow);
