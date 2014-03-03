@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD35C05C18BDDDEE00D87537 /* obstacle.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C05B18BDDCB000D87537 /* obstacle.png */; };
 		AD35C06118BDDF2200D87537 /* bum.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C06018BDDF1C00D87537 /* bum.png */; };
+		AD99E48718C450C9000351DB /* clips_controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E48518C450C9000351DB /* clips_controller.cpp */; };
 		ADB9EAF818BA9854008465B5 /* mac.1 in Copy Files */ = {isa = PBXBuildFile; fileRef = ADB9EAF718BA9854008465B5 /* mac.1 */; };
 		ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EAFF18BA9870008465B5 /* bum.cpp */; };
 		ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0018BA9870008465B5 /* camera.cpp */; };
@@ -17,7 +18,6 @@
 		ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A47918BAB4E1008438C4 /* actor.cpp */; };
 		ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */; };
 		ADD6A48218BAC4DC008438C4 /* wrapper_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */; };
-		ADD6A48418BAC569008438C4 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48318BAC569008438C4 /* point.cpp */; };
 		ADD6A48718BAC5C3008438C4 /* input_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48518BAC5C3008438C4 /* input_handler.cpp */; };
 		ADD6A48B18BAC799008438C4 /* obstacle_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48918BAC799008438C4 /* obstacle_handler.cpp */; };
 		ADD6A48E18BAC7A9008438C4 /* collectible_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A48C18BAC7A9008438C4 /* collectible_handler.cpp */; };
@@ -54,6 +54,8 @@
 /* Begin PBXFileReference section */
 		AD35C05B18BDDCB000D87537 /* obstacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle.png; sourceTree = "<group>"; };
 		AD35C06018BDDF1C00D87537 /* bum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bum.png; sourceTree = "<group>"; };
+		AD99E48318C450BF000351DB /* clips_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clips_controller.h; sourceTree = "<group>"; };
+		AD99E48518C450C9000351DB /* clips_controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clips_controller.cpp; sourceTree = "<group>"; };
 		ADB9EAF218BA9854008465B5 /* mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB9EAF718BA9854008465B5 /* mac.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mac.1; sourceTree = "<group>"; };
 		ADB9EAFF18BA9870008465B5 /* bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bum.cpp; sourceTree = "<group>"; };
@@ -70,10 +72,8 @@
 		ADB9EB1718BAA67A008465B5 /* lib_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib_wrapper.h; sourceTree = "<group>"; };
 		ADD6A47818BAB30D008438C4 /* game_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_config.h; sourceTree = "<group>"; };
 		ADD6A47918BAB4E1008438C4 /* actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = actor.cpp; sourceTree = "<group>"; };
-		ADD6A47D18BAB631008438C4 /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
 		ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = spelling_bum.cpp; sourceTree = "<group>"; };
 		ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrapper_factory.cpp; sourceTree = "<group>"; };
-		ADD6A48318BAC569008438C4 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = "<group>"; };
 		ADD6A48518BAC5C3008438C4 /* input_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_handler.cpp; sourceTree = "<group>"; };
 		ADD6A48818BAC5F4008438C4 /* input_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_handler.h; sourceTree = "<group>"; };
 		ADD6A48918BAC799008438C4 /* obstacle_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = obstacle_handler.cpp; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */,
-				ADD6A48318BAC569008438C4 /* point.cpp */,
 				ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */,
 				ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */,
 				ADB9EAFF18BA9870008465B5 /* bum.cpp */,
@@ -241,6 +240,7 @@
 				ADD6A56E18BB22E0008438C4 /* event.cpp */,
 				ADD6A57818BD8999008438C4 /* renderable.cpp */,
 				ADD6A57E18BD8B0B008438C4 /* sprite.cpp */,
+				AD99E48518C450C9000351DB /* clips_controller.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -267,12 +267,12 @@
 				ADB9EB1418BAA5BC008465B5 /* wrapper_factory.h */,
 				ADB9EB1718BAA67A008465B5 /* lib_wrapper.h */,
 				ADD6A47818BAB30D008438C4 /* game_config.h */,
-				ADD6A47D18BAB631008438C4 /* point.h */,
 				ADD6A4A118BAD8E3008438C4 /* stage.h */,
 				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
 				ADD6A56D18BB22D6008438C4 /* event.h */,
 				ADD6A57618BD8984008438C4 /* renderable.h */,
 				ADD6A57C18BD8A27008438C4 /* sprite.h */,
+				AD99E48318C450BF000351DB /* clips_controller.h */,
 			);
 			name = include;
 			path = ../include;
@@ -436,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD99E48718C450C9000351DB /* clips_controller.cpp in Sources */,
 				ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */,
 				ADD6A48218BAC4DC008438C4 /* wrapper_factory.cpp in Sources */,
 				ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */,
@@ -446,7 +447,6 @@
 				ADD6A57A18BD8999008438C4 /* renderable.cpp in Sources */,
 				ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */,
 				ADD6A48E18BAC7A9008438C4 /* collectible_handler.cpp in Sources */,
-				ADD6A48418BAC569008438C4 /* point.cpp in Sources */,
 				ADD6A49718BAC8D6008438C4 /* obstacle.cpp in Sources */,
 				ADD6A49118BAC7B8008438C4 /* score_board.cpp in Sources */,
 				ADD6A48B18BAC799008438C4 /* obstacle_handler.cpp in Sources */,

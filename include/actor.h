@@ -8,6 +8,17 @@
 class Actor : public BaseEntity {
 
 public:
+  enum PositioningStyle {
+    STATIC,
+    WITH_CAMERA,
+  };
+
+  enum CollisionStyle {
+    COLLIDABLE_BLOCKING,
+    COLLIDABLE_NON_BLOCKING,
+    NON_COLLIDABLE,
+  };
+
   Actor();
 
   // TODO(suhas): Maybe just use Rectangle instead of all these methods.
@@ -27,13 +38,14 @@ public:
   virtual void handleCollision(Actor *collidedWith) {}
   virtual void update(float delta) {}
 
-  virtual void setAsStaticActor();
-  virtual void setAsPassiveActor();
-
-  virtual bool isStaticActor() const;
-  virtual bool isPassiveActor() const;
-
   virtual Renderable getRenderable() const;
+
+  virtual PositioningStyle getPositioningStyle();
+  virtual CollisionStyle getCollisionStyle();
+
+  virtual void setPositioningStyle(PositioningStyle positioningStyle);
+  virtual void setCollisionStyle(CollisionStyle collisionStyle);
+
   virtual ~Actor() {};
 
 protected:
@@ -41,7 +53,8 @@ protected:
 
 private:
   float x, y, h, w;
-  bool isStatic, isPassive;
+  PositioningStyle positioningStyle;
+  CollisionStyle collisionStyle;
 };
 
 #endif /* defined(__include__actor__) */

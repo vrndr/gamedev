@@ -26,6 +26,7 @@ public:
   void startRendering();
   void render(const Renderable &renderable, const Rectangle &position);
   void finishRendering();
+  unsigned getCurrentTime();
 
   // Creates texture and returns textureId, that can be referrenced later to
   // render the texture created.

@@ -23,9 +23,9 @@ void Camera::renderActor(Actor *actor) {
   Rectangle actorPosition = Rectangle(actor->getX(), actor->getY(),
       actor->getWidth(), actor->getHeight());
 
-  if (actor->isStaticActor()) {
+  if (actor->getPositioningStyle() == Actor::PositioningStyle::STATIC) {
     // Static position. Always maintain the actor position.
-  } else {
+  } else if (actor->getPositioningStyle() == Actor::PositioningStyle::WITH_CAMERA) {
     // Determine position of actor.
   }
 
@@ -49,7 +49,7 @@ void Camera::update() {
   Rectangle actorPosition = actorToFollow->getPosition();
 
   // Update camera position as per actorPosition.
-  cameraPosition.setX(actorPosition.getX() - 100);
+  cameraPosition.setX(actorPosition.getX() - GameConfig::bumXPositionOnScreen);
 }
 
 Rectangle Camera::getCameraPosition() const {

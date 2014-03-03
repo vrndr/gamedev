@@ -2,9 +2,9 @@
 #include "actor.h"
 
 Actor::Actor() {
-  isStatic = false;
-  isPassive = false;
-
+  positioningStyle = WITH_CAMERA;
+  collisionStyle = COLLIDABLE_NON_BLOCKING;
+  
   renderable = new Renderable(RenderType::RENDER_NONE);
 }
 
@@ -51,20 +51,20 @@ void Actor::setPosition(const Rectangle &position) {
   setHeight(position.getHeight());
 }
 
-bool Actor::isStaticActor() const {
-  return isStatic;
+Actor::PositioningStyle Actor::getPositioningStyle() {
+  return positioningStyle;
 }
 
-bool Actor::isPassiveActor() const {
-  return isPassive;
+void Actor::setPositioningStyle(Actor::PositioningStyle positioningStyle) {
+  this->positioningStyle = positioningStyle;
 }
 
-void Actor::setAsStaticActor() {
-  isStatic = true;
+Actor::CollisionStyle Actor::getCollisionStyle() {
+  return collisionStyle;
 }
 
-void Actor::setAsPassiveActor() {
-  isPassive = true;
+void Actor::setCollisionStyle(Actor::CollisionStyle collisionStyle) {
+  this->collisionStyle = collisionStyle;
 }
 
 Renderable Actor::getRenderable() const {

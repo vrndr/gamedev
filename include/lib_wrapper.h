@@ -16,6 +16,7 @@ public:
   virtual void render(const Renderable &renderable, const Rectangle &position) = 0;
   virtual void finishRendering() = 0;
   virtual Event* getInputEvent() = 0;
+  virtual unsigned getCurrentTime() = 0; // Time in milliseconds.
 
   // Creates texture and returns textureId, that can be referrenced later to
   // render the texture created.

@@ -50,14 +50,14 @@ void SpellingBum::start() {
   camera->followActor(bum);
 
   // TODO(suhas): Not a right clock. Use something else.
-  std::clock_t currentTime = std::clock();
+  unsigned currentTime = libWrapper->getCurrentTime();
   float delta = 0;
 
   while (isRunning) {
     // TODO(suhas): Should have a GameState that will control this while loop
     // and will also control pause and game over states.
 
-    std::cout << "New delta " << delta << " time " << currentTime << "\n";
+    std::cout << "New delta " << delta << " time " << currentTime << " Bum: " << bum->getX() << "\n";
 
     // update all actors.
     std::list<Actor *> allActors = stage.getAllActors();
@@ -79,9 +79,10 @@ void SpellingBum::start() {
     camera->update();
     camera->render(stage);
 
-    std::clock_t previousTime = currentTime;
-    currentTime = std::clock();
-    delta = currentTime - previousTime;
+    unsigned previousTime = currentTime;
+    currentTime = libWrapper->getCurrentTime();
+    delta = (float)(currentTime - previousTime);
+    delta = delta / 1000;
   }
 }
 

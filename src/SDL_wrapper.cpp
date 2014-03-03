@@ -103,3 +103,7 @@ int SdlWrapper::createTexture(const std::string &fileName) {
   textures.push_back(sdlTexture);
   return (int) textures.size() - 1;
 }
+
+unsigned SdlWrapper::getCurrentTime() {
+  return SDL_GetTicks();
+}

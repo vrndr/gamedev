@@ -5,8 +5,24 @@
 
 class Bum : public Actor {
 public:
+  enum State {
+    BUM_RUN,
+    BUM_JUMP,
+    BUM_FALL,
+    STATE_MAX,
+  };
+
   Bum();
   void update(float delta);
+
+private:
+  void inforceGravity();
+  void switchStateTo(State state);
+
+  State state;
+
+  // TODO(suhas): Replace with Vector?
+  float speedX, speedY;  // speed in pixels per second.
 };
 
 #endif /* defined(__include__bum__) */
