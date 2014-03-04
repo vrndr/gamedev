@@ -49,7 +49,6 @@ void SpellingBum::start() {
   stage.addActor(bum);
   camera->followActor(bum);
 
-  // TODO(suhas): Not a right clock. Use something else.
   unsigned currentTime = libWrapper->getCurrentTime();
   float delta = 0;
 
@@ -71,10 +70,10 @@ void SpellingBum::start() {
     collectibleHandler->update(*camera);
     obstacleHandler->update(*camera);
 
+    collisionHandler->checkCollisions(stage);
+
     // TODO(suhas): Should be in different thread?
     inputHandler->handleInputEvents();
-
-    collisionHandler->checkCollisions();
 
     camera->update();
     camera->render(stage);

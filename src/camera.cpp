@@ -23,10 +23,10 @@ void Camera::renderActor(Actor *actor) {
   Rectangle actorPosition = Rectangle(actor->getX(), actor->getY(),
       actor->getWidth(), actor->getHeight());
 
-  if (actor->getPositioningStyle() == Actor::PositioningStyle::STATIC) {
-    // Static position. Always maintain the actor position.
-  } else if (actor->getPositioningStyle() == Actor::PositioningStyle::WITH_CAMERA) {
+  if (actor->isActorActive()) {
     // Determine position of actor.
+  } else {
+    // Static position. Always maintain the actor position.
   }
 
   Renderable renderable = actor->getRenderable();

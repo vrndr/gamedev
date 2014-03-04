@@ -14,12 +14,16 @@ public:
 
   Bum();
   void update(float delta);
+  void onCollision(Actor *otherActor, Rectangle *overlap);
+  // Handles events dispatched to this object
+  void handleEvent(Event* e);
 
 private:
-  void inforceGravity();
+  void inforceGravity(float delta);
   void switchStateTo(State state);
 
   State state;
+  Actor *floor;
 
   // TODO(suhas): Replace with Vector?
   float speedX, speedY;  // speed in pixels per second.

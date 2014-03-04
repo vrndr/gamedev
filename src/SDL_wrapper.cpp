@@ -82,8 +82,11 @@ Event* SdlWrapper::getInputEvent() {
       break;
 
     case SDL_KEYDOWN:
-      e = new Event(KEY_DOWN);
-      // Set other event data like key type
+      if (sdlEvent.key.keysym.sym == SDLK_SPACE) {
+        e = new Event(JUMP);
+      } else {
+        e = new Event(NONE);
+      }
       break;
 
     // Handle other events like touch.

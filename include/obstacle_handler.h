@@ -19,6 +19,7 @@ public:
 
 private:
   Stage *stage;
+  Obstacle *ground;
 
   // Really hacky. Added only for testing.
   float last_obstacle_position;

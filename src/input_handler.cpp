@@ -23,7 +23,9 @@ void InputHandler::handleInputEvents() {
       EventDispatcher->dispatchEvent(e);
       break;
 
-    // Handle all events;
+    case JUMP:
+      EventDispatcher->dispatchEvent(e);
+      break;
 
     default:
       break;

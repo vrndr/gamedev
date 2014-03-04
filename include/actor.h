@@ -8,18 +8,17 @@
 class Actor : public BaseEntity {
 
 public:
-  enum PositioningStyle {
-    STATIC,
-    WITH_CAMERA,
-  };
-
-  enum CollisionStyle {
-    COLLIDABLE_BLOCKING,
-    COLLIDABLE_NON_BLOCKING,
-    NON_COLLIDABLE,
-  };
-
   Actor();
+
+  enum ActorStyle {
+    PASSIVE,
+    MOVING_COLLIDABLE_BLOCKING,
+    MOVING_COLLIDABLE_NON_BLOCKING,
+    NON_MOVING_COLLIDABLE_BLOCKING,
+    NON_MOVING_COLLIDABLE_NON_BLOCKING,
+    MOVING_NON_COLLIDABLE,
+    NON_MOVING_NON_COLLIDABLE,
+  };
 
   // TODO(suhas): Maybe just use Rectangle instead of all these methods.
   virtual float getX() const;
@@ -40,11 +39,13 @@ public:
 
   virtual Renderable getRenderable() const;
 
-  virtual PositioningStyle getPositioningStyle();
-  virtual CollisionStyle getCollisionStyle();
+  virtual bool isActorActive() const;
+  virtual bool isActorMoving() const;
+  virtual bool isActorCollidable() const;
+  virtual bool isActorBlocking() const;
 
-  virtual void setPositioningStyle(PositioningStyle positioningStyle);
-  virtual void setCollisionStyle(CollisionStyle collisionStyle);
+  virtual void setActorStyle(ActorStyle actorStyle);
+  virtual void onCollision(Actor *otherActor, Rectangle *overlap);
 
   virtual ~Actor() {};
 
@@ -53,8 +54,7 @@ protected:
 
 private:
   float x, y, h, w;
-  PositioningStyle positioningStyle;
-  CollisionStyle collisionStyle;
+  bool isActive, isMoving, isCollidable, isBlocking;
 };
 
 #endif /* defined(__include__actor__) */

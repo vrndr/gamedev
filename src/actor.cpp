@@ -2,8 +2,7 @@
 #include "actor.h"
 
 Actor::Actor() {
-  positioningStyle = WITH_CAMERA;
-  collisionStyle = COLLIDABLE_NON_BLOCKING;
+  setActorStyle(NON_MOVING_NON_COLLIDABLE);
   
   renderable = new Renderable(RenderType::RENDER_NONE);
 }
@@ -51,22 +50,73 @@ void Actor::setPosition(const Rectangle &position) {
   setHeight(position.getHeight());
 }
 
-Actor::PositioningStyle Actor::getPositioningStyle() {
-  return positioningStyle;
+bool Actor::isActorActive() const {
+  return isActive;
 }
 
-void Actor::setPositioningStyle(Actor::PositioningStyle positioningStyle) {
-  this->positioningStyle = positioningStyle;
+bool Actor::isActorMoving() const {
+  return isMoving;
 }
 
-Actor::CollisionStyle Actor::getCollisionStyle() {
-  return collisionStyle;
+bool Actor::isActorCollidable() const {
+  return isCollidable;
 }
 
-void Actor::setCollisionStyle(Actor::CollisionStyle collisionStyle) {
-  this->collisionStyle = collisionStyle;
+bool Actor::isActorBlocking() const {
+  return isBlocking;
+}
+
+void Actor::setActorStyle(ActorStyle actorStyle) {
+  switch (actorStyle) {
+    case PASSIVE:
+      isActive = false;
+      isMoving = false;
+      isCollidable = false;
+      isBlocking = false;
+      break;
+    case MOVING_COLLIDABLE_BLOCKING:
+      isActive = true;
+      isMoving = true;
+      isCollidable = true;
+      isBlocking = true;
+      break;
+    case MOVING_COLLIDABLE_NON_BLOCKING:
+      isActive = true;
+      isMoving = true;
+      isCollidable = true;
+      isBlocking = false;
+      break;
+    case MOVING_NON_COLLIDABLE:
+      isActive = true;
+      isMoving = true;
+      isCollidable = false;
+      isBlocking = false;
+      break;
+    case NON_MOVING_COLLIDABLE_BLOCKING:
+      isActive = true;
+      isMoving = false;
+      isCollidable = true;
+      isBlocking = true;
+      break;
+    case NON_MOVING_COLLIDABLE_NON_BLOCKING:
+      isActive = true;
+      isMoving = false;
+      isCollidable = true;
+      isBlocking = false;
+      break;
+    case NON_MOVING_NON_COLLIDABLE:
+      isActive = true;
+      isMoving = false;
+      isCollidable = false;
+      isBlocking = false;
+      break;
+  }
 }
 
 Renderable Actor::getRenderable() const {
   return *renderable;
+}
+
+void Actor::onCollision(Actor *otherActor, Rectangle *overlap) {
+  
 }
