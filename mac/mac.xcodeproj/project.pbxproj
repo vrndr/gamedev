@@ -14,6 +14,8 @@
 		AD99E49618C6C36C000351DB /* timer_display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E49418C6C36C000351DB /* timer_display.cpp */; };
 		AD99E49C18C6C3B9000351DB /* game_word_character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E49A18C6C3B9000351DB /* game_word_character.cpp */; };
 		AD99E49E18C6F9AC000351DB /* SDL2_ttf in Frameworks */ = {isa = PBXBuildFile; fileRef = AD99E49D18C6F9AC000351DB /* SDL2_ttf */; };
+		AD99E4A418C7061F000351DB /* SDL2_image in Frameworks */ = {isa = PBXBuildFile; fileRef = AD99E4A318C7061F000351DB /* SDL2_image */; };
+		AD99E4A618C7065D000351DB /* SDL2 in Frameworks */ = {isa = PBXBuildFile; fileRef = AD99E4A518C7065D000351DB /* SDL2 */; };
 		ADB9EAF818BA9854008465B5 /* mac.1 in Copy Files */ = {isa = PBXBuildFile; fileRef = ADB9EAF718BA9854008465B5 /* mac.1 */; };
 		ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EAFF18BA9870008465B5 /* bum.cpp */; };
 		ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0018BA9870008465B5 /* camera.cpp */; };
@@ -31,12 +33,10 @@
 		ADD6A49F18BACE39008438C4 /* collision_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A49D18BACE39008438C4 /* collision_handler.cpp */; };
 		ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A218BAD8EF008438C4 /* stage.cpp */; };
 		ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */; };
-		ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD6A56B18BB0531008438C4 /* SDL2.framework */; };
 		ADD6A57018BB22E0008438C4 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A56E18BB22E0008438C4 /* event.cpp */; };
 		ADD6A57418BC7D36008438C4 /* event_dispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */; };
 		ADD6A57A18BD8999008438C4 /* renderable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57818BD8999008438C4 /* renderable.cpp */; };
 		ADD6A58018BD8B0B008438C4 /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD6A57E18BD8B0B008438C4 /* sprite.cpp */; };
-		ADD6A58418BD8F0D008438C4 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +68,8 @@
 		AD99E49A18C6C3B9000351DB /* game_word_character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_word_character.cpp; sourceTree = "<group>"; };
 		AD99E49D18C6F9AC000351DB /* SDL2_ttf */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SDL2_ttf; sourceTree = "<group>"; };
 		AD99E4A218C6FE37000351DB /* DejaVuSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSans.ttf; sourceTree = "<group>"; };
+		AD99E4A318C7061F000351DB /* SDL2_image */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SDL2_image; sourceTree = "<group>"; };
+		AD99E4A518C7065D000351DB /* SDL2 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SDL2; sourceTree = "<group>"; };
 		ADB9EAF218BA9854008465B5 /* mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB9EAF718BA9854008465B5 /* mac.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mac.1; sourceTree = "<group>"; };
 		ADB9EAFF18BA9870008465B5 /* bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bum.cpp; sourceTree = "<group>"; };
@@ -175,7 +177,6 @@
 		ADD6A55D18BB0323008438C4 /* README-SDL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README-SDL.txt"; sourceTree = "<group>"; };
 		ADD6A55E18BB0323008438C4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		ADD6A55F18BB0323008438C4 /* WhatsNew.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WhatsNew.txt; sourceTree = "<group>"; };
-		ADD6A56B18BB0531008438C4 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		ADD6A56D18BB22D6008438C4 /* event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
 		ADD6A56E18BB22E0008438C4 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
 		ADD6A57118BC7D1E008438C4 /* base_entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_entity.h; sourceTree = "<group>"; };
@@ -185,7 +186,6 @@
 		ADD6A57818BD8999008438C4 /* renderable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderable.cpp; sourceTree = "<group>"; };
 		ADD6A57C18BD8A27008438C4 /* sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
 		ADD6A57E18BD8B0B008438C4 /* sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sprite.cpp; sourceTree = "<group>"; };
-		ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +193,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */,
+				AD99E4A418C7061F000351DB /* SDL2_image in Frameworks */,
 				AD99E49E18C6F9AC000351DB /* SDL2_ttf in Frameworks */,
-				ADD6A58418BD8F0D008438C4 /* SDL2_image.framework in Frameworks */,
+				AD99E4A618C7065D000351DB /* SDL2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,9 +388,9 @@
 		ADD6A56A18BB0531008438C4 /* lib-mac */ = {
 			isa = PBXGroup;
 			children = (
+				AD99E4A518C7065D000351DB /* SDL2 */,
+				AD99E4A318C7061F000351DB /* SDL2_image */,
 				AD99E49D18C6F9AC000351DB /* SDL2_ttf */,
-				ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */,
-				ADD6A56B18BB0531008438C4 /* SDL2.framework */,
 			);
 			path = "lib-mac";
 			sourceTree = "<group>";
