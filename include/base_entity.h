@@ -7,7 +7,7 @@
 // It provides event handling capability to all derived classes
 class BaseEntity {
 public:
-  virtual void handleEvent(Event* e) {}  ;
+  virtual void handleEvent(Event* e) {};
 };
 
 

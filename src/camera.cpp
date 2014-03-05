@@ -25,6 +25,7 @@ void Camera::renderActor(Actor *actor) {
 
   if (actor->isActorActive()) {
     // Determine position of actor.
+    actorPosition.setX(actorPosition.getX() - cameraPosition.getX());
   } else {
     // Static position. Always maintain the actor position.
   }
@@ -34,7 +35,6 @@ void Camera::renderActor(Actor *actor) {
   // Render actor at actorPosition.
   // TODO(suhas): Actor class should have the info about how it should be rendered.
 
-  actorPosition.setX(actorPosition.getX() - cameraPosition.getX());
   libWrapper->render(renderable, actorPosition);
 }
 

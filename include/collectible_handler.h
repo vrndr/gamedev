@@ -6,6 +6,7 @@
 
 #include "camera.h"
 #include "collectible.h"
+#include "game_tracker.h"
 #include "stage.h"
 
 // TODO(suhas): Maybe pull out common code between CollectibleHandler and
@@ -13,7 +14,7 @@
 class CollectibleHandler {
 
 public:
-  void initializeObstacles(const Stage &stage);
+  void initializeObstacles(const Stage &stage, GameTracker *gameTracker);
 
   void update(const Camera &camera);
 };

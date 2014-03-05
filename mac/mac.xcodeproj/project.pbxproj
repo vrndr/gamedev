@@ -10,6 +10,10 @@
 		AD35C05C18BDDDEE00D87537 /* obstacle.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C05B18BDDCB000D87537 /* obstacle.png */; };
 		AD35C06118BDDF2200D87537 /* bum.png in Copy Files */ = {isa = PBXBuildFile; fileRef = AD35C06018BDDF1C00D87537 /* bum.png */; };
 		AD99E48718C450C9000351DB /* clips_controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E48518C450C9000351DB /* clips_controller.cpp */; };
+		AD99E49018C6C354000351DB /* game_tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E48E18C6C354000351DB /* game_tracker.cpp */; };
+		AD99E49618C6C36C000351DB /* timer_display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E49418C6C36C000351DB /* timer_display.cpp */; };
+		AD99E49C18C6C3B9000351DB /* game_word_character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD99E49A18C6C3B9000351DB /* game_word_character.cpp */; };
+		AD99E49E18C6F9AC000351DB /* SDL2_ttf in Frameworks */ = {isa = PBXBuildFile; fileRef = AD99E49D18C6F9AC000351DB /* SDL2_ttf */; };
 		ADB9EAF818BA9854008465B5 /* mac.1 in Copy Files */ = {isa = PBXBuildFile; fileRef = ADB9EAF718BA9854008465B5 /* mac.1 */; };
 		ADB9EB0318BA9870008465B5 /* bum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EAFF18BA9870008465B5 /* bum.cpp */; };
 		ADB9EB0418BA9870008465B5 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADB9EB0018BA9870008465B5 /* camera.cpp */; };
@@ -56,6 +60,14 @@
 		AD35C06018BDDF1C00D87537 /* bum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bum.png; sourceTree = "<group>"; };
 		AD99E48318C450BF000351DB /* clips_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clips_controller.h; sourceTree = "<group>"; };
 		AD99E48518C450C9000351DB /* clips_controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clips_controller.cpp; sourceTree = "<group>"; };
+		AD99E48C18C6C349000351DB /* game_tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_tracker.h; sourceTree = "<group>"; };
+		AD99E48E18C6C354000351DB /* game_tracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_tracker.cpp; sourceTree = "<group>"; };
+		AD99E49218C6C365000351DB /* timer_display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer_display.h; sourceTree = "<group>"; };
+		AD99E49418C6C36C000351DB /* timer_display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer_display.cpp; sourceTree = "<group>"; };
+		AD99E49818C6C3A5000351DB /* game_word_character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game_word_character.h; sourceTree = "<group>"; };
+		AD99E49A18C6C3B9000351DB /* game_word_character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game_word_character.cpp; sourceTree = "<group>"; };
+		AD99E49D18C6F9AC000351DB /* SDL2_ttf */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SDL2_ttf; sourceTree = "<group>"; };
+		AD99E4A218C6FE37000351DB /* DejaVuSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DejaVuSans.ttf; sourceTree = "<group>"; };
 		ADB9EAF218BA9854008465B5 /* mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB9EAF718BA9854008465B5 /* mac.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mac.1; sourceTree = "<group>"; };
 		ADB9EAFF18BA9870008465B5 /* bum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bum.cpp; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD6A56C18BB0531008438C4 /* SDL2.framework in Frameworks */,
+				AD99E49E18C6F9AC000351DB /* SDL2_ttf in Frameworks */,
 				ADD6A58418BD8F0D008438C4 /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,27 +233,30 @@
 		ADB9EAFE18BA9870008465B5 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */,
-				ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */,
-				ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */,
+				ADD6A47918BAB4E1008438C4 /* actor.cpp */,
 				ADB9EAFF18BA9870008465B5 /* bum.cpp */,
 				ADB9EB0018BA9870008465B5 /* camera.cpp */,
-				ADB9EB0218BA9870008465B5 /* sdl_wrapper.cpp */,
-				ADB9EB0D18BA99B1008465B5 /* main.cpp */,
-				ADD6A47918BAB4E1008438C4 /* actor.cpp */,
-				ADD6A48518BAC5C3008438C4 /* input_handler.cpp */,
-				ADD6A48918BAC799008438C4 /* obstacle_handler.cpp */,
-				ADD6A48C18BAC7A9008438C4 /* collectible_handler.cpp */,
-				ADD6A48F18BAC7B8008438C4 /* score_board.cpp */,
-				ADD6A49518BAC8D6008438C4 /* obstacle.cpp */,
-				ADD6A49818BAC8E8008438C4 /* collectible.cpp */,
-				ADD6A49D18BACE39008438C4 /* collision_handler.cpp */,
-				ADD6A4A218BAD8EF008438C4 /* stage.cpp */,
-				ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */,
-				ADD6A56E18BB22E0008438C4 /* event.cpp */,
-				ADD6A57818BD8999008438C4 /* renderable.cpp */,
-				ADD6A57E18BD8B0B008438C4 /* sprite.cpp */,
 				AD99E48518C450C9000351DB /* clips_controller.cpp */,
+				ADD6A49818BAC8E8008438C4 /* collectible.cpp */,
+				ADD6A48C18BAC7A9008438C4 /* collectible_handler.cpp */,
+				ADD6A49D18BACE39008438C4 /* collision_handler.cpp */,
+				ADD6A56E18BB22E0008438C4 /* event.cpp */,
+				ADD6A57318BC7D36008438C4 /* event_dispatcher.cpp */,
+				ADD6A48518BAC5C3008438C4 /* input_handler.cpp */,
+				ADB9EB0D18BA99B1008465B5 /* main.cpp */,
+				ADD6A49518BAC8D6008438C4 /* obstacle.cpp */,
+				ADD6A48918BAC799008438C4 /* obstacle_handler.cpp */,
+				ADD6A4A618BAE3C2008438C4 /* rectangle.cpp */,
+				ADD6A57818BD8999008438C4 /* renderable.cpp */,
+				ADD6A48F18BAC7B8008438C4 /* score_board.cpp */,
+				ADB9EB0218BA9870008465B5 /* sdl_wrapper.cpp */,
+				ADD6A47F18BAC4DC008438C4 /* spelling_bum.cpp */,
+				ADD6A57E18BD8B0B008438C4 /* sprite.cpp */,
+				ADD6A4A218BAD8EF008438C4 /* stage.cpp */,
+				ADD6A48018BAC4DC008438C4 /* wrapper_factory.cpp */,
+				AD99E48E18C6C354000351DB /* game_tracker.cpp */,
+				AD99E49418C6C36C000351DB /* timer_display.cpp */,
+				AD99E49A18C6C3B9000351DB /* game_word_character.cpp */,
 			);
 			name = src;
 			path = ../src;
@@ -249,30 +265,33 @@
 		ADB9EB0718BA9975008465B5 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				ADD6A57118BC7D1E008438C4 /* base_entity.h */,
-				ADD6A57218BC7D1E008438C4 /* event_dispatcher.h */,
-				ADD6A4A018BACE51008438C4 /* collision_handler.h */,
-				ADD6A49B18BAC905008438C4 /* collectible.h */,
-				ADD6A49C18BAC905008438C4 /* obstacle.h */,
-				ADD6A49218BAC7DF008438C4 /* collectible_handler.h */,
-				ADD6A49318BAC7DF008438C4 /* obstacle_handler.h */,
-				ADD6A49418BAC7DF008438C4 /* score_board.h */,
-				ADD6A48818BAC5F4008438C4 /* input_handler.h */,
 				ADB9EB0818BA9975008465B5 /* actor.h */,
+				ADD6A57118BC7D1E008438C4 /* base_entity.h */,
 				ADB9EB0918BA9975008465B5 /* bum.h */,
 				ADB9EB0A18BA9975008465B5 /* camera.h */,
+				AD99E48318C450BF000351DB /* clips_controller.h */,
+				ADD6A49B18BAC905008438C4 /* collectible.h */,
+				ADD6A49218BAC7DF008438C4 /* collectible_handler.h */,
+				ADD6A4A018BACE51008438C4 /* collision_handler.h */,
+				ADD6A56D18BB22D6008438C4 /* event.h */,
+				ADD6A57218BC7D1E008438C4 /* event_dispatcher.h */,
 				ADB9EB0B18BA9975008465B5 /* game.h */,
+				ADD6A47818BAB30D008438C4 /* game_config.h */,
+				ADD6A48818BAC5F4008438C4 /* input_handler.h */,
+				ADB9EB1718BAA67A008465B5 /* lib_wrapper.h */,
+				ADD6A49C18BAC905008438C4 /* obstacle.h */,
+				ADD6A49318BAC7DF008438C4 /* obstacle_handler.h */,
+				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
+				ADD6A57618BD8984008438C4 /* renderable.h */,
+				ADD6A49418BAC7DF008438C4 /* score_board.h */,
 				ADB9EB0C18BA9975008465B5 /* sdl_wrapper.h */,
 				ADB9EB1118BA9DE5008465B5 /* spelling_bum.h */,
-				ADB9EB1418BAA5BC008465B5 /* wrapper_factory.h */,
-				ADB9EB1718BAA67A008465B5 /* lib_wrapper.h */,
-				ADD6A47818BAB30D008438C4 /* game_config.h */,
-				ADD6A4A118BAD8E3008438C4 /* stage.h */,
-				ADD6A4A518BAE3B6008438C4 /* rectangle.h */,
-				ADD6A56D18BB22D6008438C4 /* event.h */,
-				ADD6A57618BD8984008438C4 /* renderable.h */,
 				ADD6A57C18BD8A27008438C4 /* sprite.h */,
-				AD99E48318C450BF000351DB /* clips_controller.h */,
+				ADD6A4A118BAD8E3008438C4 /* stage.h */,
+				ADB9EB1418BAA5BC008465B5 /* wrapper_factory.h */,
+				AD99E48C18C6C349000351DB /* game_tracker.h */,
+				AD99E49218C6C365000351DB /* timer_display.h */,
+				AD99E49818C6C3A5000351DB /* game_word_character.h */,
 			);
 			name = include;
 			path = ../include;
@@ -369,6 +388,7 @@
 		ADD6A56A18BB0531008438C4 /* lib-mac */ = {
 			isa = PBXGroup;
 			children = (
+				AD99E49D18C6F9AC000351DB /* SDL2_ttf */,
 				ADD6A58318BD8F0D008438C4 /* SDL2_image.framework */,
 				ADD6A56B18BB0531008438C4 /* SDL2.framework */,
 			);
@@ -378,6 +398,7 @@
 		ADD6A58F18BDBF6D008438C4 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				AD99E4A218C6FE37000351DB /* DejaVuSans.ttf */,
 				AD35C06018BDDF1C00D87537 /* bum.png */,
 				AD35C05B18BDDCB000D87537 /* obstacle.png */,
 			);
@@ -443,8 +464,10 @@
 				ADB9EB0618BA9870008465B5 /* sdl_wrapper.cpp in Sources */,
 				ADD6A49A18BAC8E8008438C4 /* collectible.cpp in Sources */,
 				ADD6A49F18BACE39008438C4 /* collision_handler.cpp in Sources */,
+				AD99E49018C6C354000351DB /* game_tracker.cpp in Sources */,
 				ADD6A4A818BAE3C2008438C4 /* rectangle.cpp in Sources */,
 				ADD6A57A18BD8999008438C4 /* renderable.cpp in Sources */,
+				AD99E49618C6C36C000351DB /* timer_display.cpp in Sources */,
 				ADD6A48118BAC4DC008438C4 /* spelling_bum.cpp in Sources */,
 				ADD6A48E18BAC7A9008438C4 /* collectible_handler.cpp in Sources */,
 				ADD6A49718BAC8D6008438C4 /* obstacle.cpp in Sources */,
@@ -453,6 +476,7 @@
 				ADD6A57418BC7D36008438C4 /* event_dispatcher.cpp in Sources */,
 				ADD6A48718BAC5C3008438C4 /* input_handler.cpp in Sources */,
 				ADD6A47B18BAB4E1008438C4 /* actor.cpp in Sources */,
+				AD99E49C18C6C3B9000351DB /* game_word_character.cpp in Sources */,
 				ADD6A58018BD8B0B008438C4 /* sprite.cpp in Sources */,
 				ADD6A4A418BAD8EF008438C4 /* stage.cpp in Sources */,
 				ADD6A57018BB22E0008438C4 /* event.cpp in Sources */,
@@ -542,6 +566,7 @@
 					"$(inherited)",
 					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-win/x64",
 					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-win/x86",
+					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-mac",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -558,6 +583,7 @@
 					"$(inherited)",
 					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-win/x64",
 					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-win/x86",
+					"/Users/suhas/development/src/gamedev/gamedev/ext/SDL2/lib-mac",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

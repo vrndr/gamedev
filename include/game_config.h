@@ -2,6 +2,8 @@
 #ifndef __include__game_config__
 #define __include__game_config__
 
+#include <string>
+
 #include "rectangle.h"
 
 // All configuration constants go here.
@@ -17,6 +19,13 @@ namespace GameConfig {
   const float screenHeight = (float) 480;
 
   const float gravity = (float) 250;  // pixels per second.
+
+  const std::string gameWord = "SPELL";
+  const float gameWordDisplayWidth = (float) 200;
+  const float gameWordCharacterSize = (float) 30;
+  const float gameWordCharacterY = (float) 30;
+
+  const Rectangle scoreBoardPosition(500, 20, 80, 25);
 };
 
 #endif /* defined(__include__game_config__) */

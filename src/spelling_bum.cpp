@@ -22,6 +22,7 @@ bool SpellingBum::init() {
   collectibleHandler = new CollectibleHandler();
   collisionHandler = new CollisionHandler();
   inputHandler = new InputHandler();
+  gameTracker = new GameTracker();
   camera = new Camera();
   EventDispatcher->registerEventHandler( this, QUIT );
   isRunning = true ;
@@ -105,8 +106,9 @@ void SpellingBum::dispose() {
 
 void SpellingBum::initializeEnvironment() {
   obstacleHandler->initializeCollectibles(&stage);
-  collectibleHandler->initializeObstacles(stage);
+  collectibleHandler->initializeObstacles(stage, gameTracker);
   collisionHandler->init();
   inputHandler->init();
+  gameTracker->init(camera, &stage);
   camera->init();
 }

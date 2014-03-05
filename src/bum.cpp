@@ -85,7 +85,11 @@ void Bum::onCollision(Actor *otherActor, Rectangle *overlap) {
   } else {
     // Collided on X.
     if (getX() < overlap->getX()) {
+      // Colliding from left.
       setX(overlap->getX() - getWidth());
+    } else if ((getX() + getWidth()) > overlap->getX()) {
+      // Colliding from right.
+      setX(overlap->getX() + overlap->getWidth());
     }
   }
 }

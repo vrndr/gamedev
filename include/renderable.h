@@ -2,6 +2,8 @@
 #ifndef __include__renderable__
 #define __include__renderable__
 
+#include <string>
+
 #include "sprite.h"
 
 enum RenderType {
@@ -21,9 +23,11 @@ public:
 
   void setSprite(Sprite *sprite);
   void setClipId(int clipId);
+  void setText(std::string text);
 
   Rectangle getClip() const;
   int getTextureId() const;
+  std::string getText() const;
 
   RenderType getRenderType() const;
 
@@ -38,6 +42,7 @@ public:
     Builder setNumTotalClips(int numTotalClips);
     Builder setClipWidth(int clipWidth);
     Builder setClipHeight(int clipHeight);
+    Builder setText(std::string text);
     Renderable* build();
 
   private:
@@ -45,12 +50,14 @@ public:
     RenderType renderType;
     std::string filePath;
     int clipId;
+    std::string text;
   };
 
 private:
   RenderType type;
   Sprite *sprite;
   int clipId;
+  std::string text;
 
   // Add fields required to render text and rendering type?
 };

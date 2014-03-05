@@ -6,12 +6,12 @@
 
 using namespace std ;
 
-SDL_Rect toSdlRect(const Rectangle &rectangle) {
-  SDL_Rect sdlRect;
-  sdlRect.x = rectangle.getX();
-  sdlRect.y = rectangle.getY();
-  sdlRect.w = rectangle.getWidth();
-  sdlRect.h = rectangle.getHeight();
+SDL_Rect* toSdlRect(const Rectangle &rectangle) {
+  SDL_Rect *sdlRect = new SDL_Rect();
+  sdlRect->x = rectangle.getX();
+  sdlRect->y = rectangle.getY();
+  sdlRect->w = rectangle.getWidth();
+  sdlRect->h = rectangle.getHeight();
   return sdlRect;
 }
 
@@ -24,7 +24,12 @@ bool SdlWrapper::init() {
     return false;
   }
 
-  window = SDL_CreateWindow("SpellingBum", SDL_WINDOWPOS_CENTERED, 
+  if (TTF_Init() == -1){
+    std::cout << TTF_GetError() << std::endl;
+    return 2;
+  }
+
+  window = SDL_CreateWindow("SpellingBum", SDL_WINDOWPOS_CENTERED,
       SDL_WINDOWPOS_CENTERED, GameConfig::screenWidth, GameConfig::screenHeight,
       SDL_WINDOW_SHOWN);
   if (window == nullptr){
@@ -38,6 +43,10 @@ bool SdlWrapper::init() {
     return false;
   }
 
+  font = TTF_OpenFont("assets/DejaVuSans.ttf", 15);
+  if (font == nullptr) {
+    std::cout << "OpenFont error: " << SDL_GetError() << std::endl;
+  }
   SDL_RenderClear(renderer);
   return true;
 }
@@ -56,14 +65,27 @@ void SdlWrapper::render(const Renderable &renderable,
   switch (renderable.getRenderType()) {
     case RENDER_IMAGE: {
       SDL_Texture *texture = textures.at(renderable.getTextureId());
-      SDL_Rect srcRect = toSdlRect(renderable.getClip());
-      SDL_Rect destRect = toSdlRect(position);
-      SDL_RenderCopy(renderer, texture, &srcRect, &destRect);
+      SDL_Rect *srcRect = toSdlRect(renderable.getClip());
+      SDL_Rect *destRect = toSdlRect(position);
+      SDL_RenderCopy(renderer, texture, srcRect, destRect);
+      delete srcRect;
+      delete destRect;
       break;
     }
 
-    case RENDER_TEXT:
+    case RENDER_TEXT: {
+      SDL_Color color = { 255, 255, 255 };
+      SDL_Surface *surf = TTF_RenderText_Blended(font, renderable.getText().c_str(), color);
+      if (surf == nullptr) {
+        std::cout << "RenderText error: " << SDL_GetError() << std::endl;
+      }
+      SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surf);
+      SDL_Rect *destRect = toSdlRect(position);
+      SDL_RenderCopy(renderer, texture, NULL, destRect);
+      delete destRect;
+      SDL_FreeSurface(surf);
       break;
+    }
 
     case RENDER_NONE:
       break;

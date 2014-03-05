@@ -25,12 +25,20 @@ void Renderable::setSprite(Sprite *sprite) {
   this->sprite = sprite;
 }
 
+void Renderable::setText(std::string text) {
+  this->text = text;
+}
+
 int Renderable::getTextureId() const {
   return sprite->getTextureId();
 }
 
 RenderType Renderable::getRenderType() const {
   return type;
+}
+
+std::string Renderable::getText() const {
+  return text;
 }
 
 Renderable::Builder Renderable::Builder::setRenderType(RenderType renderType) {
@@ -68,14 +76,23 @@ Renderable::Builder Renderable::Builder::setTextureFile(std::string filePath) {
   return *this;
 }
 
+Renderable::Builder Renderable::Builder::setText(std::string text) {
+  this->text = text;
+  return *this;
+}
+
 Renderable* Renderable::Builder::build() {
   Renderable *renderable = new Renderable(renderType);
-  Sprite *sprite = new Sprite();
-  sprite->build(filePath, numClipsInRow, numClipsInCol, numTotalClips,
-               clipWidth, clipHeight);
+  if (renderType == RENDER_IMAGE) {
+    Sprite *sprite = new Sprite();
+    sprite->build(filePath, numClipsInRow, numClipsInCol, numTotalClips,
+                 clipWidth, clipHeight);
 
-  renderable->setSprite(sprite);
-  renderable->setClipId(clipId);
+    renderable->setSprite(sprite);
+    renderable->setClipId(clipId);
+  } else if (renderType == RENDER_TEXT) {
+    renderable->setText(text);
+  }
 
   return renderable;
 }

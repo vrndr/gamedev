@@ -6,11 +6,13 @@
 
 #include "lib_wrapper.h"
 #include "SDL.h"
+#include "SDL_ttf.h"
 
 class SdlWrapper : public LibWrapper {
   SDL_Window *window;
   SDL_Renderer *renderer;
   std::vector<SDL_Texture *> textures;
+  TTF_Font *font;
 
 public:
 

@@ -1,7 +1,8 @@
 
 #include "collectible_handler.h"
 
-void CollectibleHandler::initializeObstacles(const Stage &stage) {
+void CollectibleHandler::initializeObstacles(const Stage &stage,
+                                             GameTracker *gameTracker) {
   
 }
 

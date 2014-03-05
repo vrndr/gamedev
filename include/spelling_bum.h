@@ -5,6 +5,7 @@
 #include "collectible_handler.h"
 #include "collision_handler.h"
 #include "game.h"
+#include "game_tracker.h"
 #include "input_handler.h"
 #include "lib_wrapper.h"
 #include "obstacle_handler.h"
@@ -40,6 +41,7 @@ private:
   CollectibleHandler *collectibleHandler;
   CollisionHandler *collisionHandler;
   InputHandler *inputHandler;
+  GameTracker *gameTracker;
   Camera *camera;
 
   Stage stage;
