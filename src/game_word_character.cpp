@@ -28,4 +28,9 @@ bool GameWordCharacter::isHidden() {
 
 void GameWordCharacter::markFound() {
   hidden = false;
+  std::string text(1, character);
+  renderable = Renderable::Builder()
+      .setRenderType(RenderType::RENDER_TEXT)
+      .setText(text)
+      .build();
 }

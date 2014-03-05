@@ -106,7 +106,7 @@ void SpellingBum::dispose() {
 
 void SpellingBum::initializeEnvironment() {
   obstacleHandler->initializeCollectibles(&stage);
-  collectibleHandler->initializeObstacles(stage, gameTracker);
+  collectibleHandler->initializeCollectibles(&stage, gameTracker);
   collisionHandler->init();
   inputHandler->init();
   gameTracker->init(camera, &stage);

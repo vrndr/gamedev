@@ -24,7 +24,7 @@ public:
     char collectedCharacter;
   };
 
-  EventData getEventData();
+  EventData* getEventData();
   
 private:
   EventType type;

@@ -1,4 +1,5 @@
 
+#include "event_dispatcher.h"
 #include "game_config.h"
 #include "game_tracker.h"
 
@@ -26,6 +27,7 @@ void GameTracker::init(Camera *camera, Stage *stage) {
     characterNum++;
   }
   this->camera = camera;
+  EventDispatcher->registerEventHandler(this, OBJECT_COLLECTED);
 }
 
 void GameTracker::getNewCharacter() {
@@ -37,7 +39,7 @@ void GameTracker::handleEvent(Event* e) {
     case OBJECT_COLLECTED:
       for (GameWordCharacter *c : gameCharacters) {
         if (c->isHidden()
-            && c->getCharacter() == e->getEventData().collectedCharacter) {
+            && c->getCharacter() == e->getEventData()->collectedCharacter) {
           c->markFound();
           scoreBoard->updateScore(20);
           break;

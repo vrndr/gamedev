@@ -9,6 +9,6 @@ EventType Event::getType() {
   return type;
 }
 
-Event::EventData Event::getEventData() {
-  return eventData;
+Event::EventData* Event::getEventData() {
+  return &eventData;
 }

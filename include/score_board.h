@@ -8,7 +8,7 @@ class ScoreBoard : public Actor {
 
 public:
   ScoreBoard();
-  void updateScore(int addScore);
+  void updateScore(int points);
 
 private:
   int score;

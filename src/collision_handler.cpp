@@ -51,6 +51,7 @@ Rectangle *getOverlaps(Actor *mainActor, Actor *otherActor) {
 
 void notifyActors(Actor *mainActor, Actor *otherActor, Rectangle *overlap) {
   mainActor->onCollision(otherActor, overlap);
+  otherActor->onCollision(mainActor, overlap);
 }
 
 void handleCollisionsWithOtherActors(Actor *mainActor, std::list<Actor *> allActors) {

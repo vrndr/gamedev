@@ -14,9 +14,14 @@
 class CollectibleHandler {
 
 public:
-  void initializeObstacles(const Stage &stage, GameTracker *gameTracker);
+  void initializeCollectibles(Stage *stage, GameTracker *gameTracker);
 
   void update(const Camera &camera);
+
+private:
+  Stage *stage;
+  GameTracker *gameTracker;
+  int lastCollectiblePositionX;
 };
 
 #endif /* defined(__include__collectible_injector__) */

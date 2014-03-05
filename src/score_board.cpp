@@ -7,10 +7,11 @@ ScoreBoard::ScoreBoard() {
       .setText("Score: " + std::to_string(score))
       .build();
 
+  score = 0;
   setActorStyle(PASSIVE);
 }
 
-void ScoreBoard::updateScore(int addScore) {
-  score = score + addScore;
+void ScoreBoard::updateScore(int points) {
+  score = score + points;
   renderable->setText("Score: " + std::to_string(score));
 }
