@@ -10,11 +10,13 @@ void CollectibleHandler::initializeCollectibles(Stage *stage,
 
 void CollectibleHandler::update(const Camera &camera) {
 
+  char character = gameTracker->getNewCharacter();
+
   /*** Only for testing. Update me. *******/
    
   float cameraX = camera.getCameraPosition().getX();
   if (cameraX > (lastCollectiblePositionX)) {
-    Collectible *collectible = new Collectible('L');
+    Collectible *collectible = new Collectible(character);
     Rectangle collectiblePosition(cameraX + 900, 300, 30, 40);
     collectible->setPosition(collectiblePosition);
 

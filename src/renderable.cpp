@@ -3,6 +3,7 @@
 
 Renderable::Renderable(RenderType type) {
   this->type = type;
+  sprite = NULL;
 }
 
 Sprite Renderable::getSprite() const {

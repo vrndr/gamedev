@@ -75,15 +75,21 @@ void SdlWrapper::render(const Renderable &renderable,
 
     case RENDER_TEXT: {
       SDL_Color color = { 255, 255, 255 };
-      SDL_Surface *surf = TTF_RenderText_Blended(font, renderable.getText().c_str(), color);
-      if (surf == nullptr) {
+      SDL_Surface *surface = TTF_RenderText_Blended(font,
+          renderable.getText().c_str(), color);
+      if (surface == nullptr) {
         std::cout << "RenderText error: " << SDL_GetError() << std::endl;
       }
-      SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surf);
+      SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+      if (texture == nullptr) {
+        std::cout << "CreateTexture error: " << SDL_GetError() << std::endl;
+      }
+      SDL_FreeSurface(surface);
+
       SDL_Rect *destRect = toSdlRect(position);
       SDL_RenderCopy(renderer, texture, NULL, destRect);
+      SDL_DestroyTexture(texture);
       delete destRect;
-      SDL_FreeSurface(surf);
       break;
     }
 

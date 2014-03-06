@@ -2,12 +2,12 @@
 #include "score_board.h"
 
 ScoreBoard::ScoreBoard() {
+  score = 0;
   renderable = Renderable::Builder()
       .setRenderType(RenderType::RENDER_TEXT)
       .setText("Score: " + std::to_string(score))
       .build();
 
-  score = 0;
   setActorStyle(PASSIVE);
 }
 

@@ -60,6 +60,7 @@ void handleCollisionsWithOtherActors(Actor *mainActor, std::list<Actor *> allAct
     Rectangle *overlap = getOverlaps(mainActor, *actor);
     if (overlap) {
       notifyActors(mainActor, *actor, overlap);
+      delete overlap;
     }
   }
 }

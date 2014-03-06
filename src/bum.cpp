@@ -4,17 +4,10 @@
 #include "event_dispatcher.h"
 #include "game_config.h"
 #include "renderable.h"
+#include "renderable_factory.h"
 
 Bum::Bum() {
-  renderable = Renderable::Builder()
-      .setRenderType(RenderType::RENDER_IMAGE)
-      .setTextureFile("assets/bum.png")
-      .setNumClipsInRow(4)
-      .setNumClipsInCol(5)
-      .setNumTotalClips(20)
-      .setClipWidth(192)
-      .setClipHeight(160)
-      .build();
+  renderable = RenderableFactory->getBumRenderable();
 
   setActorStyle(MOVING_COLLIDABLE_BLOCKING);
 

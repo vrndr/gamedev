@@ -1,4 +1,7 @@
 
+#include <stdlib.h>
+#include <time.h>
+
 #include "event_dispatcher.h"
 #include "game_config.h"
 #include "game_tracker.h"
@@ -23,29 +26,57 @@ void GameTracker::init(Camera *camera, Stage *stage) {
     character->setY(GameConfig::gameWordCharacterY);
     character->setX(gameWordDisplayX + characterWidth * characterNum);
 
+    remainingChars.push_back(c);
+
     stage->addActor(character);
     characterNum++;
   }
   this->camera = camera;
   EventDispatcher->registerEventHandler(this, OBJECT_COLLECTED);
+  srand((unsigned) time(NULL));
 }
 
-void GameTracker::getNewCharacter() {
-  
+char GameTracker::getNewCharacter() {
+  int random = rand() % 100;
+  if (random < 60) {
+    return 'A' + (rand() % 26);
+  }
+
+  if (remainingChars.size() == 0) {
+    return '%'; // Error.
+  }
+  random = rand() % (remainingChars.size());
+  std::list<char>::iterator it = remainingChars.begin();
+  for (int i = 0; i < random; i++, it++) {}
+
+  return *it;
 }
 
 void GameTracker::handleEvent(Event* e) {
   switch (e->getType()) {
-    case OBJECT_COLLECTED:
+    case OBJECT_COLLECTED: {
+      bool found = false;
       for (GameWordCharacter *c : gameCharacters) {
         if (c->isHidden()
             && c->getCharacter() == e->getEventData()->collectedCharacter) {
           c->markFound();
+          found = true;
+          for (std::list<char>::iterator it = remainingChars.begin();
+              it != remainingChars.end(); it++) {
+            if (*it == c->getCharacter()) {
+              remainingChars.erase(it);
+              break;
+            }
+          }
           scoreBoard->updateScore(20);
           break;
         }
       }
+      if (!found) {
+        scoreBoard->updateScore(-10);
+      }
       break;
+    }
       
     default:
       break;

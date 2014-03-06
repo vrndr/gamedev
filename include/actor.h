@@ -47,8 +47,6 @@ public:
   virtual void setActorStyle(ActorStyle actorStyle);
   virtual void onCollision(Actor *otherActor, Rectangle *overlap);
 
-  virtual ~Actor() {};
-
 protected:
   Renderable *renderable;
 

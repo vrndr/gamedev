@@ -83,6 +83,9 @@ void SpellingBum::start() {
     currentTime = libWrapper->getCurrentTime();
     delta = (float)(currentTime - previousTime);
     delta = delta / 1000;
+    if (delta > 0.1) {
+      delta = (float) 0.1;
+    }
   }
 }
 

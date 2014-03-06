@@ -14,7 +14,7 @@ class GameTracker : public BaseEntity {
 
 public:
   void init(Camera *camera, Stage *stage);
-  void getNewCharacter();
+  char getNewCharacter();
   void handleEvent(Event* e);
 
 private:
@@ -22,6 +22,7 @@ private:
   TimerDisplay *timerDisplay;
   std::list<GameWordCharacter *> gameCharacters;
   Camera *camera;
+  std::list<char> remainingChars;
 };
 
 #endif /* defined(__include__game_tracker__) */
