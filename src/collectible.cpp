@@ -24,4 +24,5 @@ void Collectible::onCollision(Actor *otherActor, Rectangle *overlap) {
   EventDispatcher->dispatchEvent(e);
 
   setActorStyle(NON_MOVING_NON_COLLIDABLE);
+  renderable = new Renderable(RenderType::RENDER_NONE);
 }

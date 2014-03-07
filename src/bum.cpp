@@ -40,6 +40,9 @@ void Bum::inforceGravity(float delta) {
       if (floor == NULL || (floor->getX() + floor->getWidth()) < getX()) {
         switchStateTo(BUM_FALL);
         floor = NULL;
+      } else if ((getY() + getHeight()) > floor->getY()) {
+        setY(floor->getY() - getHeight());
+        speedY = 0;
       }
       break;
 
