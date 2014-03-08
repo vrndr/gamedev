@@ -65,6 +65,7 @@ void GameTracker::handleEvent(Event* e) {
               it != remainingChars.end(); it++) {
             if (*it == c->getCharacter()) {
               remainingChars.erase(it);
+              checkGameOverCondition();
               break;
             }
           }
@@ -83,3 +84,9 @@ void GameTracker::handleEvent(Event* e) {
   }
 }
 
+void GameTracker::checkGameOverCondition() {
+  if (remainingChars.size() == 0) {
+    Event *e = new Event(EventType::GAME_OVER);
+    EventDispatcher->dispatchEvent(e);
+  }
+}

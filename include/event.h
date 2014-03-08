@@ -9,6 +9,7 @@ enum EventType {
   JUMP,
   BOOST,
   OBJECT_COLLECTED,
+  GAME_OVER,
   EVENT_MAX    // Last event in enum, only used to define number of items in EventType
                // Always add all the enums before this value
 };

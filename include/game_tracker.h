@@ -18,6 +18,8 @@ public:
   void handleEvent(Event* e);
 
 private:
+  void checkGameOverCondition();
+
   ScoreBoard *scoreBoard;
   TimerDisplay *timerDisplay;
   std::list<GameWordCharacter *> gameCharacters;

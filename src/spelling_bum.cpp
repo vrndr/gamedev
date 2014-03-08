@@ -24,19 +24,26 @@ bool SpellingBum::init() {
   inputHandler = new InputHandler();
   gameTracker = new GameTracker();
   camera = new Camera();
-  EventDispatcher->registerEventHandler( this, QUIT );
+  EventDispatcher->registerEventHandler(this, QUIT);
+  EventDispatcher->registerEventHandler(this, GAME_OVER);
   isRunning = true ;
 
   return true;
 }
 
-void SpellingBum::handleEvent(Event* e)
-{
-  switch(e->getType())
-  {
-  case QUIT:
-    this->isRunning = false ;
-    break ;
+void SpellingBum::handleEvent(Event* e) {
+  switch(e->getType()) {
+
+    case QUIT:
+      this->isRunning = false ;
+      break ;
+
+    case GAME_OVER:
+      this->isRunning = false;
+      break;
+
+    default:
+      break;
   }
 }
 
